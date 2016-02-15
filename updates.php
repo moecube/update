@@ -9,7 +9,7 @@
 $platform = $_GET['platform'];
 $updates = json_decode(file_get_contents('updates.json'));
 
-$result = new SimpleXMLElement('<metalink/>', 0, false, 'urn:ietf:params:xml:ns:metalink');
+$result = (new SimpleXMLElement('<metalink/>', 0, false, 'urn:ietf:params:xml:ns:metalink'))->addChild('files');
 
 
 foreach ($updates as $update) {
