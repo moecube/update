@@ -9,7 +9,7 @@
 $platform = $_GET['platform'];
 $updates = json_decode(file_get_contents('updates.json'));
 
-$result = new SimpleXMLElement('<metalink/>', 0, false, 'urn:ietf:params:xml:ns:metalink');
+$result = (new SimpleXMLElement('<metalink/>', 0, false, 'urn:ietf:params:xml:ns:metalink'))->addChild('files');
 
 
 foreach ($updates as $update) {
@@ -20,7 +20,7 @@ foreach ($updates as $update) {
             $file->addChild('identity', $update->app_id);
             $file->addChild('version', $update->version);
             $file->addChild('hash', $update->hash)->addAttribute('type', 'sha-256');
-            $file->addChild('url', "http://downloads.my-card.in/apps-update/$update->filename");
+            $file->addChild('url', "http://downloads.my-card.in/apps-updates/$update->filename");
         }
     }
 }
