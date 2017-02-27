@@ -1,0 +1,21 @@
+{
+  "name": "mycard-console-update",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "tsc && node server.js"
+  },
+  "dependencies": {
+    "@types/koa": "latest",
+    "@types/koa-bodyparser": "latest",
+    "@types/koa-hbs": "^2.0.4",
+    "@types/koa-router": "latest",
+    "@types/node": "0.0.3",
+    "koa": "next",
+    "koa-bodyparser": "next",
+    "koa-hbs": "^0.9.0",
+    "koa-router": "next"
+  },
+  "devDependencies": {
+    "typescript": "latest"
+  }
+}
